@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Games Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-mark">▶</span>
+        <span class="logo-text">Games Hub</span>
+      </div>
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span"></span>
+          <span></span>
+        </button>
+        <ul class="nav-list">
+          <li><button class="nav-link active" data-target="home">Home</button></li>
+          <li><button class="nav-link" data-target="game-1">Game One</button></li>
+          <li><button class="nav-link" data-target="game-2">Game Two</button></li>
+          <li><button class="nav-link" data-target="simulation">Simulation Lab</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section id="home" class="tab-panel is-visible">
+        <div class="hero">
+          <div>
+            <h1>Welcome to your interactive games hub</h1>
+            <p>
+              Use the navigation above to switch between different games and simulations.
+              Each tab is ready for you to plug in new experiences over time.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-btn" data-target="game-1">Jump to first game</button>
+              <button class="ghost-btn" data-target="simulation">Explore simulations</button>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h2>Today’s status</h2>
+            <ul>
+              <li><span class="dot dot-live"></span> Home experience is live</li>
+              <li><span class="dot"></span> Game areas: ready for content</li>
+              <li><span class="dot"></span> Simulation lab: ready for content</li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="grid">
+          <article class="card">
+            <h3>Game One</h3>
+            <p>
+              A dedicated space for your first interactive game. Add your canvas, 3D scene,
+              or logic here when you’re ready.
+            </p>
+            <button class="secondary-btn" data-target="game-1">Open tab</button>
+          </article>
+          <article class="card">
+            <h3>Game Two</h3>
+            <p>
+              A second game slot for experiments, prototypes, or alternate versions.
+            </p>
+            <button class="secondary-btn" data-target="game-2">Open tab</button>
+          </article>
+          <article class="card">
+            <h3>Simulation Lab</h3>
+            <p>
+              Perfect for physics, market, or other simulations you’d like to visualize.
+            </p>
+            <button class="secondary-btn" data-target="simulation">Open tab</button>
+          </article>
+        </section>
+      </section>
+
+      <section id="game-1" class="tab-panel">
+        <header class="panel-header">
+          <h2>Game One</h2>
+          <p class="panel-subtitle">
+            This area is set up for your first game. Replace the placeholder with your own logic.
+          </p>
+        </header>
+        <div class="placeholder">
+          <div class="placeholder-inner">
+            <h3>Game canvas goes here</h3>
+            <p>
+              Add your game board, canvas, or DOM-based UI inside this panel.
+              You can give this section its own script file later.
+            </p>
+            <div class="placeholder-grid">
+              <div class="placeholder-block"></div>
+              <div class="placeholder-block"></div>
+              <div class="placeholder-block"></div>
+              <div class="placeholder-block"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="game-2" class="tab-panel">
+        <header class="panel-header">
+          <h2>Game Two</h2>
+          <p class="panel-subtitle">
+            Another dedicated space for a different game, variant, or prototype.
+          </p>
+        </header>
+        <div class="placeholder">
+          <div class="placeholder-inner">
+            <h3>Coming soon</h3>
+            <p>
+              Drop in your second game here. You might use this for A/B testing
+              or new game ideas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="simulation" class="tab-panel">
+        <header class="panel-header">
+          <h2>Simulation Lab</h2>
+          <p class="panel-subtitle">
+            Build visual simulations here – for example, market dynamics, physics, or agent-based models.
+          </p>
+        </header>
+        <div class="placeholder">
+          <div class="placeholder-inner">
+            <h3>Simulation area</h3>
+            <p>
+              You can attach charts, canvases, or DOM controls to this section.
+              Think of this as your sandbox for experiments.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Games Hub &middot; Ready for your next idea</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
