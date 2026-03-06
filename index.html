@@ -53,10 +53,9 @@
 
         <section class="grid">
           <article class="card">
-            <h3>Game One</h3>
+            <h3>Market Making Game</h3>
             <p>
-              A dedicated space for your first interactive game. Add your canvas, 3D scene,
-              or logic here when you’re ready.
+              You quote bid and ask; a bot trades against you based on its expected value. Compete to make the best market on a coin flip.
             </p>
             <button class="secondary-btn" data-target="game-1">Open tab</button>
           </article>
@@ -79,24 +78,46 @@
 
       <section id="game-1" class="tab-panel">
         <header class="panel-header">
-          <h2>Game One</h2>
+          <h2>Market Making Game</h2>
           <p class="panel-subtitle">
-            This area is set up for your first game. Replace the placeholder with your own logic.
+            You are the market maker. Quote a bid and ask for a contract that pays $1 if the coin lands heads. The bot will buy or sell if your prices are favorable to its expected value.
           </p>
         </header>
-        <div class="placeholder">
-          <div class="placeholder-inner">
-            <h3>Game canvas goes here</h3>
-            <p>
-              Add your game board, canvas, or DOM-based UI inside this panel.
-              You can give this section its own script file later.
-            </p>
-            <div class="placeholder-grid">
-              <div class="placeholder-block"></div>
-              <div class="placeholder-block"></div>
-              <div class="placeholder-block"></div>
-              <div class="placeholder-block"></div>
+        <div class="market-game">
+          <div class="market-scores">
+            <div class="score-box you">
+              <span class="score-label">Your P&amp;L</span>
+              <span class="score-value" id="game1-your-pnl">$0.00</span>
             </div>
+            <div class="score-box bot">
+              <span class="score-label">Bot P&amp;L</span>
+              <span class="score-value" id="game1-bot-pnl">$0.00</span>
+            </div>
+          </div>
+
+          <div class="market-phase market-quote" id="game1-phase-quote">
+            <p class="market-instruction">Set your bid (you buy) and ask (you sell). Prices are in cents per $1 contract (0–100).</p>
+            <div class="market-inputs">
+              <label class="market-field">
+                <span>Bid</span>
+                <input type="number" id="game1-bid" min="0" max="100" value="45" step="1" />
+              </label>
+              <label class="market-field">
+                <span>Ask</span>
+                <input type="number" id="game1-ask" min="0" max="100" value="55" step="1" />
+              </label>
+            </div>
+            <button type="button" class="primary-btn" id="game1-post">Post market</button>
+          </div>
+
+          <div class="market-phase market-result" id="game1-phase-result" hidden>
+            <p class="market-bot-action" id="game1-bot-action"></p>
+            <div class="coin-wrap" id="game1-coin-wrap">
+              <div class="coin" id="game1-coin">?</div>
+              <span class="coin-label" id="game1-coin-label">Flipping…</span>
+            </div>
+            <p class="market-settlement" id="game1-settlement"></p>
+            <button type="button" class="primary-btn" id="game1-next">Next round</button>
           </div>
         </div>
       </section>
