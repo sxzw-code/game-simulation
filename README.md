@@ -1,7 +1,7 @@
 # game-simulation
 A platform used to simulate games/trading situations
 
-## Interactive Games Hub
+## Alpha
 
 A simple, modern single-page website with a navigation bar and multiple tabs:
 
