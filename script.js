@@ -7,6 +7,22 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-target]")
   );
 
+  // Theme toggle (dark / light)
+  const THEME_KEY = "alpha-theme";
+  const themeToggle = document.getElementById("theme-toggle");
+  function getTheme() {
+    return localStorage.getItem(THEME_KEY) || "dark";
+  }
+  function setTheme(theme) {
+    theme = theme === "light" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_KEY, theme);
+  }
+  setTheme(getTheme());
+  themeToggle?.addEventListener("click", () => {
+    setTheme(getTheme() === "light" ? "dark" : "light");
+  });
+
   function showPanel(id) {
     panels.forEach((panel) => {
       panel.classList.toggle("is-visible", panel.id === id);

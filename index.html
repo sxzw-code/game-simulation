@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alpha</title>
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("alpha-theme");
+        if (t === "light") document.documentElement.setAttribute("data-theme", "light");
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -13,6 +19,10 @@
         <span class="logo-text">Alpha</span>
       </div>
       <nav class="nav">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <span class="theme-icon theme-icon-dark" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-light" aria-hidden="true">☽</span>
+        </button>
         <button class="nav-toggle" aria-label="Toggle navigation">
           <span></span>
           <span></span>
