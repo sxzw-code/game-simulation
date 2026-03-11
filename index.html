@@ -94,52 +94,55 @@
           </p>
         </header>
         <div class="market-game pd-game">
-          <div class="market-scores">
-            <div class="score-box you">
-              <span class="score-label">Your total</span>
-              <span class="score-value" id="game1-your-pnl">$0.00</span>
+          <div class="pd-scores">
+            <div class="pd-score pd-score-you">
+              <span class="pd-score-label">Your total</span>
+              <span class="pd-score-value" id="game1-your-pnl">$0.00</span>
             </div>
-            <div class="score-box bot">
-              <span class="score-label">Bot total</span>
-              <span class="score-value" id="game1-bot-pnl">$0.00</span>
+            <div class="pd-score pd-score-bot">
+              <span class="pd-score-label">Bot total</span>
+              <span class="pd-score-value" id="game1-bot-pnl">$0.00</span>
             </div>
           </div>
 
-          <div class="pd-matrix-wrap">
-            <div class="pd-matrix-label">This round's payoff matrix (you, bot)</div>
+          <div class="pd-matrix-wrap pd-matrix-card">
+            <div class="pd-matrix-label">Payoff matrix <span class="pd-matrix-hint">(you, bot)</span></div>
             <table class="pd-matrix" id="game1-matrix">
               <thead>
-                <tr><th></th><th>Bot C</th><th>Bot D</th></tr>
+                <tr><th class="pd-cell-corner"></th><th>Bot cooperates</th><th>Bot defects</th></tr>
               </thead>
               <tbody>
-                <tr><th>You C</th><td id="game1-cc">—</td><td id="game1-cd">—</td></tr>
-                <tr><th>You D</th><td id="game1-dc">—</td><td id="game1-dd">—</td></tr>
+                <tr><th>You cooperate</th><td id="game1-cc">—</td><td id="game1-cd">—</td></tr>
+                <tr><th>You defect</th><td id="game1-dc">—</td><td id="game1-dd">—</td></tr>
               </tbody>
             </table>
           </div>
 
-          <div class="market-phase market-quote" id="game1-phase-quote">
+          <div class="market-phase market-quote pd-your-move" id="game1-phase-quote">
             <p class="market-instruction">Market on “bot cooperates” (pays $1 if bot plays C). Set bid and ask (¢), then choose Cooperate or Defect.</p>
             <div class="market-inputs">
               <label class="market-field">
-                <span>Bid</span>
+                <span class="pd-market-label">Bid (¢)</span>
                 <input type="number" id="game1-bid" min="0" max="100" value="40" step="1" />
               </label>
               <label class="market-field">
-                <span>Ask</span>
+                <span class="pd-market-label">Ask (¢)</span>
                 <input type="number" id="game1-ask" min="0" max="100" value="60" step="1" />
               </label>
             </div>
             <div class="pd-actions">
-              <button type="button" class="primary-btn" id="game1-cooperate">Cooperate</button>
-              <button type="button" class="secondary-btn" id="game1-defect">Defect</button>
+              <button type="button" class="pd-btn pd-btn-cooperate" id="game1-cooperate">Cooperate</button>
+              <button type="button" class="pd-btn pd-btn-defect" id="game1-defect">Defect</button>
             </div>
           </div>
 
-          <div class="market-phase market-result" id="game1-phase-result" hidden>
-            <p class="market-bot-action" id="game1-bot-action"></p>
-            <p class="market-settlement" id="game1-settlement"></p>
-            <button type="button" class="primary-btn" id="game1-next">Next round</button>
+          <div class="market-phase market-result pd-result" id="game1-phase-result" hidden>
+            <div class="pd-result-card">
+              <div class="pd-block-title">Round result</div>
+              <p class="pd-result-bot" id="game1-bot-action"></p>
+              <p class="pd-result-settlement" id="game1-settlement"></p>
+              <button type="button" class="primary-btn pd-next-btn" id="game1-next">Next round</button>
+            </div>
           </div>
         </div>
       </section>
